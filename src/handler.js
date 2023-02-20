@@ -55,7 +55,7 @@ const getNoteByIdHandler = (request, h) => {
     }
   }
   const response = h.response({
-    status: fail,
+    status: "fail",
     message: 'Catatan tidak ditemukan'
   })
   response.code(404)
