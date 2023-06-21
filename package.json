@@ -12,8 +12,10 @@
   "license": "ISC",
   "dependencies": {
     "@hapi/hapi": "^21.3.0",
+    "dotenv": "^16.3.1",
     "joi": "^17.9.2",
     "nanoid": "^3.3.4",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "pg": "^8.11.0"
   }
 }
