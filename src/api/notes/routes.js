@@ -6,6 +6,7 @@ const routes = (handler) => [
     path: '/notes',
     handler: (request, h) => handler.postNoteHandler(request, h),
     options: {
+      auth: 'notesapp_jwt',
       cors: {
         origin: ['*']
       }
@@ -14,22 +15,34 @@ const routes = (handler) => [
   {
     method: 'GET',
     path: '/notes',
-    handler: () => handler.getNotesHandler()
+    handler: () => handler.getNotesHandler(),
+    options: {
+      auth: 'notesapp_jwt',
+    }
   },
   {
     method: 'GET',
     path: '/notes/{id}',
-    handler: (request, h) => handler.getNoteByIdHandler(request, h)
+    handler: (request, h) => handler.getNoteByIdHandler(request, h),
+    options: {
+      auth: 'notesapp_jwt',
+    }
   },
   {
     method: 'PUT',
     path: '/notes/{id}',
-    handler: (request, h) => handler.putNoteByIdHandler(request, h)
+    handler: (request, h) => handler.putNoteByIdHandler(request, h),
+    options: {
+      auth: 'notesapp_jwt',
+    }
   },
   {
     method: 'DELETE',
     path: '/notes/{id}',
-    handler: (request, h) => handler.deleteNoteByIdHandler(request, h)
+    handler: (request, h) => handler.deleteNoteByIdHandler(request, h),
+    options: {
+      auth: 'notesapp_jwt',
+    }
   }
 ]
 
