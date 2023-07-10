@@ -15,7 +15,7 @@ const routes = (handler) => [
   {
     method: 'GET',
     path: '/notes',
-    handler: () => handler.getNotesHandler(),
+    handler: (request, h) => handler.getNotesHandler(request, h),
     options: {
       auth: 'notesapp_jwt',
     }
