@@ -3,3 +3,4 @@ node_modules
 .prod.env
 .vscode
 vscode
+src/api/uploads/file
