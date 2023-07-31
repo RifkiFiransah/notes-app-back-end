@@ -14,11 +14,17 @@ class Uploadshandler {
       this._validator.validateImageHeaders(data.hapi.headers)
 
       const filename = await this._service.writeFile(data, data.hapi)
+      // Jika menggunakan AWS S3 pakai yang ini
+      // const fileLocation = await this._service.writeFile(data, data.hapi)
 
       const response = h.response({
         status: 'success',
         data: {
           fileLocation: `http://${process.env.HOST}:${process.env.PORT}/upload/images/${filename}`
+          // Jika menggunakan AWS S3 pakai yang ini
+          // fileLocation: filename
+          // OR
+          // fileLocation
         }
       })
       response.code(201)
